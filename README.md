@@ -1,5 +1,3 @@
-好的,我尝试直接给出修改后的 README 内容:
-
 # FlowerBuff
 
 一个简单易用的 Godot buff 插件
@@ -28,7 +26,7 @@ FlowerBuff 可以轻松为 Godot 游戏添加 buff 效果。主要功能:
 2. 将 addons/FlowerBuff 放进你的项目中的 addons 文件夹
 3. 重新加载项目
 
-需要 Godot 3.x 版本。
+> 需要 Godot 4.x 版本。
 
 ## 快速上手
 
