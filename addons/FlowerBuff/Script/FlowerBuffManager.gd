@@ -15,6 +15,7 @@ var computer:FlowerComputer
 # TODO：触发条件、优先级
 # TODO：触发条件细分： 1. 自动触发 2. 条件不满足自动取消 3. 条件满足自动触发
 # TODO：计算流水线 - 1. more流水线 2. inc流水线
+# TODO：循环次数
 # 先把需要计算的数据加到一个字典
 
 func _ready() -> void:
@@ -79,6 +80,8 @@ func computed_values() -> void:
             elif _value.type == FlowerConst.COMPUTE_TYPE.INCREASE:
                 # inc 类型
                 computer.increase_data[_value.id] = _value
+            elif _value.type == FlowerConst.COMPUTE_TYPE.COMPLEX_INCREASE:
+                computer.complex_increase_data[_value.id] = _value
     # 然后加入进去origin_data
     computer.origin_data = compute_data
     # 先后计算

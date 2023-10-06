@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnf7hhwcjgs4r"]
+[gd_scene load_steps=10 format=3 uid="uid://cnf7hhwcjgs4r"]
 
 [ext_resource type="Script" path="res://Script/Scene/Game.gd" id="1_76fn0"]
 [ext_resource type="Script" path="res://addons/FlowerBuff/Script/FlowerBuffManager.gd" id="1_l4hfr"]
@@ -9,37 +9,26 @@
 
 [sub_resource type="Resource" id="Resource_lixap"]
 script = ExtResource("4_ry7un")
-hp = 100
+hp = 1
+max_hp = 200
 mp = 10
+damage = 100
 
 [sub_resource type="Resource" id="Resource_pham1"]
 script = ExtResource("5_hk1fa")
-id = "增加血量"
-type = 0
+id = "增加攻击伤害"
+type = 3
 value = 100.0
-target_property = "hp"
-
-[sub_resource type="Resource" id="Resource_jmr0x"]
-script = ExtResource("5_hk1fa")
-id = "增加Mp"
-type = 1
-value = 100.0
-target_property = "mp"
-
-[sub_resource type="Resource" id="Resource_gtcee"]
-script = ExtResource("5_hk1fa")
-id = "增加HpInc"
-type = 1
-value = 100.0
-target_property = "hp"
+formual = "1 - [hp]/[max_hp]"
+target_property = "damage"
 
 [sub_resource type="Resource" id="Resource_ckf86"]
 script = ExtResource("5_e67g8")
-name = "测试Buff"
-desc = ""
+name = "浴血"
+desc = "自身血量越低，攻击伤害越高。"
 repeat = false
 infinite = true
-compute_values = Array[ExtResource("5_hk1fa")]([SubResource("Resource_pham1"), SubResource("Resource_jmr0x"), SubResource("Resource_gtcee")])
+compute_values = Array[ExtResource("5_hk1fa")]([SubResource("Resource_pham1")])
 prepare_time = 0
 active_time = 0
 cooldown_time = 0

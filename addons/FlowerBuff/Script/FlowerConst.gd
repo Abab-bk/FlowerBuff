@@ -3,5 +3,7 @@ extends Node
 
 enum COMPUTE_TYPE {
     MORE,
-    INCREASE
+    INCREASE,
+    COMPLEX_MORE,
+    COMPLEX_INCREASE
 }
