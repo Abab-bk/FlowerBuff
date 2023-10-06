@@ -1,69 +1,57 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnf7hhwcjgs4r"]
+[gd_scene load_steps=12 format=3 uid="uid://cnf7hhwcjgs4r"]
 
 [ext_resource type="Script" path="res://Script/Scene/Game.gd" id="1_76fn0"]
 [ext_resource type="Script" path="res://addons/FlowerBuff/Script/FlowerBuffManager.gd" id="1_l4hfr"]
-[ext_resource type="Script" path="res://Script/Buffs/EquipmentBuff.gd" id="3_u0p41"]
 [ext_resource type="Script" path="res://Script/Actor/Actor.gd" id="4_mi57p"]
+[ext_resource type="Script" path="res://Script/CharacterDatas.gd" id="4_ry7un"]
+[ext_resource type="Script" path="res://addons/FlowerBuff/Script/FlowerBaseBuff.gd" id="5_e67g8"]
+[ext_resource type="Script" path="res://addons/FlowerBuff/Script/FlowerComputeData.gd" id="5_hk1fa"]
 
-[sub_resource type="Resource" id="Resource_lbdrc"]
-script = ExtResource("3_u0p41")
-value = 20
-way = 0
-property = 1
-name = "修改MP"
+[sub_resource type="Resource" id="Resource_lixap"]
+script = ExtResource("4_ry7un")
+hp = 100
+mp = 10
+
+[sub_resource type="Resource" id="Resource_pham1"]
+script = ExtResource("5_hk1fa")
+id = "增加血量"
+type = 0
+value = 100.0
+target_property = "hp"
+
+[sub_resource type="Resource" id="Resource_jmr0x"]
+script = ExtResource("5_hk1fa")
+id = "增加Mp"
+type = 1
+value = 100.0
+target_property = "mp"
+
+[sub_resource type="Resource" id="Resource_gtcee"]
+script = ExtResource("5_hk1fa")
+id = "增加HpInc"
+type = 1
+value = 100.0
+target_property = "hp"
+
+[sub_resource type="Resource" id="Resource_ckf86"]
+script = ExtResource("5_e67g8")
+name = "测试Buff"
 desc = ""
 repeat = false
 infinite = true
-prepare_time = 2
-active_time = 20
-cooldown_time = 0
-
-[sub_resource type="Resource" id="Resource_funtd"]
-script = ExtResource("3_u0p41")
-value = 60
-way = 1
-property = 0
-name = "修改MP"
-desc = ""
-repeat = false
-infinite = true
-prepare_time = 4
-active_time = 10
-cooldown_time = 0
-
-[sub_resource type="Resource" id="Resource_momyl"]
-script = ExtResource("3_u0p41")
-value = 10
-way = 0
-property = 2
-name = "修改SP"
-desc = ""
-repeat = false
-infinite = true
-prepare_time = 6
-active_time = 12
-cooldown_time = 0
-
-[sub_resource type="Resource" id="Resource_as711"]
-script = ExtResource("3_u0p41")
-value = 40
-way = 0
-property = 0
-name = ""
-desc = ""
-repeat = false
-infinite = true
-prepare_time = 1
+compute_values = Array[ExtResource("5_hk1fa")]([SubResource("Resource_pham1"), SubResource("Resource_jmr0x"), SubResource("Resource_gtcee")])
+prepare_time = 0
 active_time = 0
 cooldown_time = 0
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_76fn0")
 
-[node name="FlowerBuffManager" type="Node" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("1_l4hfr")
-target = NodePath("../Player")
-buff_list = Array[Resource("res://addons/FlowerBuff/Script/FlowerBaseBuff.gd")]([SubResource("Resource_lbdrc"), SubResource("Resource_funtd"), SubResource("Resource_momyl"), SubResource("Resource_as711"), null])
-
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("4_mi57p")
+
+[node name="PlayerBuffs" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_l4hfr")
+target = NodePath("../Player")
+compute_data = SubResource("Resource_lixap")
+buff_list = Array[ExtResource("5_e67g8")]([SubResource("Resource_ckf86")])
