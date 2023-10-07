@@ -24,7 +24,10 @@ func _ready() -> void:
     
     computer = FlowerComputer.new()
     add_child(computer)
-    computer.output_data_change.connect(func():output_data = computer.output_data)
+    computer.output_data_change.connect(func():
+        output_data = computer.output_data
+        print("更新 output_data 完毕")
+        )
     
     timer = Timer.new()
     add_child(timer)
@@ -74,19 +77,28 @@ func computed_values() -> void:
     # 要先把buff给分类
     for _buff in buff_list:
         for _value in _buff.compute_values:
-            if _value.type == FlowerConst.COMPUTE_TYPE.MORE:
-                # more 类型
-                computer.more_data[_value.id] = _value
-            elif _value.type == FlowerConst.COMPUTE_TYPE.INCREASE:
-                # inc 类型
-                computer.increase_data[_value.id] = _value
-            elif _value.type == FlowerConst.COMPUTE_TYPE.COMPLEX_INCREASE:
-                computer.complex_increase_data[_value.id] = _value
+            if computer.all_data.has(_value.id):
+                # TODO: 如果 all_data 存在相同id，把id处理到不相同然后再添加.
+                computer.all_data[_value.id] = _value
+                continue
+            computer.all_data[_value.id] = _value
+            continue
+            
+#            if _value.type == FlowerConst.COMPUTE_TYPE.MORE:
+#                # more 类型
+#                computer.more_data[_value.id] = _value
+#            elif _value.type == FlowerConst.COMPUTE_TYPE.INCREASE:
+#                # inc 类型
+#                computer.increase_data[_value.id] = _value
+#            elif _value.type == FlowerConst.COMPUTE_TYPE.COMPLEX_INCREASE:
+#                computer.complex_increase_data[_value.id] = _value
+#            elif _value.type == FlowerConst.COMPUTE_TYPE.COMPLEX_MORE:
+#                computer.complex_more_data[_value.id] = _value
+    
     # 然后加入进去origin_data
     computer.origin_data = compute_data
     # 先后计算
     computer.compute()
-    print("计算完毕")
 
 func compute() -> void:
     for _buff in buff_list:
