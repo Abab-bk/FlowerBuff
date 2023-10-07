@@ -24,7 +24,7 @@ target_property = "damage"
 
 [sub_resource type="Resource" id="Resource_ck3e7"]
 script = ExtResource("5_hk1fa")
-id = "增加Hp"
+id = "增加攻击伤害"
 type = 2
 value = 100.0
 formual = "10 * 1"
