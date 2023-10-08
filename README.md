@@ -1,28 +1,19 @@
 # FlowerBuff
 
-一个简单易用的 Godot buff 插件
+## 🤔这是什么？🤔
 
-## 目录
+FlowerBuff 是一个为 Godot 开发的强大、简单、易用的 Buff 系统插件。
 
-- [简介](#简介)
-- [安装](#安装)
-- [快速上手](#快速上手)
-- [API文档](#API文档) 
-- [常见问题](#常见问题)
-- [反馈与贡献](#反馈与贡献)
-
-## 简介
-
-FlowerBuff 可以轻松为 Godot 游戏添加 buff 效果。主要功能:
+## ✨特性✨
 
 - 支持自定义 buff 逻辑
 - 自动处理 buff 应用、持续、冷却等状态
 - 简单的 API 使用
 - 良好的扩展性
 
-## 安装
+## 🫡安装🫡
 
-1. 下载本项目 release
+1. clone 本项目
 2. 将 addons/FlowerBuff 放进你的项目中的 addons 文件夹
 3. 重新加载项目
 
@@ -30,7 +21,7 @@ FlowerBuff 可以轻松为 Godot 游戏添加 buff 效果。主要功能:
 
 ## 快速上手
 
-##### 创建 buff 类
+### 创建 buff 类
 
 新建一个继承自 FlowerBaseBuff 的脚本:
 
@@ -45,7 +36,7 @@ func un_take_effect():
    print("Buff结束")
 ```
 
-##### 应用 buff
+### 应用 buff
 
 在场景中添加 FlowerBuffManager 节点,设置 target 属性,然后在 buff_list 中添加自定义的 buff:
 

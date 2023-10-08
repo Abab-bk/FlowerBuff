@@ -1,0 +1,7 @@
+site_name: FlowerBuffDocs
+nav:
+- Home: index.md
+- FlowerBaseBuff: FlowerBaseBuff.md
+- ComputeValues: ComputeValues.md
+- FlowerBuffManager: FlowerBuffManager.md
+theme: readthedocs
