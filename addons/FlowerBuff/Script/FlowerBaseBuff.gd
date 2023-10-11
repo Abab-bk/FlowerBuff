@@ -11,6 +11,7 @@ signal computed_values
 @export var name:String = ""
 @export var desc:String = ""
 @export var repeat:bool = false
+@export var repeat_count:int = 0
 @export var infinite:bool = false
 #@export var tigger:FlowerTigger
 @export var compute_values:Array[FlowerComputeData] # = [FlowerComputeData.new("测试", "HP", FlowerConst.COMPUTE_TYPE.MORE, 3.0)]
@@ -30,6 +31,7 @@ signal computed_values
 var prepare_time_temp:int = 0
 var active_time_temp:int = 0
 var cooldown_time_temp:int = 0
+var repeated_count:int = 0
 
 var actor:Node
 var origin_data:FlowerData
@@ -67,6 +69,13 @@ func minus_active_time() -> void:
             remove()
             return
 #        print("是重复buff，应该继续：", repeat)
+        
+        if repeated_count >= repeat_count:
+#            print("循环次数耗尽")
+            remove()
+            return
+        
+        repeated_count += 1
         current_state = STATE.COOLDOWN
     
     active_time_temp -= 1

@@ -1,5 +1,7 @@
 # FlowerBuff
 
+> 
+
 ## 🤔这是什么？🤔
 
 FlowerBuff 是一个为 Godot 开发的强大、简单、易用的 Buff 系统插件。
@@ -49,7 +51,7 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 
 ## API文档
 
-你可以在 [这里]([FlowerBuff - FlowerBuff](https://btother.gitbook.io/flowerbuff/)) 查看更多文档。
+你可以在 [这里](https://btother.gitbook.io/flowerbuff/) 查看更多文档。
 
 ### FlowerBaseBuff
 

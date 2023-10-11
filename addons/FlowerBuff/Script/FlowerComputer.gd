@@ -5,14 +5,7 @@ signal output_data_change
 
 var origin_data:FlowerData
 var output_data:FlowerData
-var more_data:Dictionary
-var increase_data:Dictionary
-var complex_more_data:Dictionary
-var complex_increase_data:Dictionary
 var all_data:Dictionary
-
-#func _ready() -> void:
-#    check_data()
 
 func compute() -> void:
     compute_all()
@@ -80,7 +73,7 @@ func compute_all() -> void:
                 output_data[_origin_index] += output_data[_origin_index] * computed_data[_origin_index]
                 
                 output_data_change.emit()
-        print("计算完毕")
+#        print("计算完毕")
 
 func analyse_formula(_formula:String) -> String:
     # 首先通过正则解析方括号内内容：
@@ -99,14 +92,3 @@ func analyse_formula(_formula:String) -> String:
     
     return _formula
 
-func check_data() -> void:
-    for i in more_data:
-        if more_data[i].type == FlowerConst.COMPUTE_TYPE.MORE:
-            continue
-        assert(false, "Data != COMPUTE_TYPE.MORE")
-    
-    for i in increase_data:
-        if increase_data[i].type == FlowerConst.COMPUTE_TYPE.INCREASE:
-            continue
-        assert(false, "Data != COMPUTE_TYPE.INCREASE")
-        
