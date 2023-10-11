@@ -16,6 +16,7 @@ script = ExtResource("1_0mkof")
 name = "Flame"
 desc = "每秒损失100点生命，持续3秒。"
 repeat = true
+repeat_count = 3
 infinite = false
 compute_values = Array[ExtResource("1_d21ys")]([SubResource("Resource_h2yx8")])
 prepare_time = 0

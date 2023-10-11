@@ -1,5 +1,9 @@
 # FlowerBuff
 
+[English](READMEEN.MD)
+
+正式发布！当前版本：v0.0.1！
+
 ![](Cover.png)
 
 ## 🤔这是什么？🤔
@@ -49,19 +53,9 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 
 调用 `FlowerBuffManager.compute()` 来处理 buff 逻辑。
 
-## API文档
+## 文档
 
 你可以在 [这里](https://btother.gitbook.io/flowerbuff/) 查看更多文档。
-
-### FlowerBaseBuff
-
-- name：buff名称
-- desc：buff描述
-- repeat：buff是否重复（即冷却后是否再次执行，为false则执行完毕后销毁）
-- infinite：是否永不自动销毁- prepare_time：准备时间，单位秒，在这个时间过后才会执行buff
-- active_time：持续时间，单位秒，在这个时间过后buff执行完毕
-- cooldown_time：冷却时间，单位秒
-- actor：FlowerBuffManager 的 target 属性，buff 应用的对象
 
 ## 常见问题
 
