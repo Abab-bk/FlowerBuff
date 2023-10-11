@@ -1,6 +1,6 @@
 # FlowerBuff
 
-[English](READMEEN.MD)
+[English](READMEEN.md)
 
 正式发布！当前版本：v0.0.1！
 
