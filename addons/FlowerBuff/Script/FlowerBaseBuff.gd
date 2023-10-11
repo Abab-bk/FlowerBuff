@@ -1,6 +1,8 @@
 class_name FlowerBaseBuff
 extends Resource
 
+# TODO: buff循环次数
+
 signal activated
 signal finished
 signal removed

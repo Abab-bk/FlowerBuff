@@ -49,7 +49,7 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 
 ## API文档
 
-你可以在 [这里](https://abab-bk.github.io/FlowerBuff/) 查看更多文档。
+你可以在 [这里]([FlowerBuff - FlowerBuff](https://btother.gitbook.io/flowerbuff/)) 查看更多文档。
 
 ### FlowerBaseBuff
 

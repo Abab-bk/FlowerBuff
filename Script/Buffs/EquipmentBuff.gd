@@ -1,5 +1,4 @@
-class_name SimpleBuff
-extends FlowerBaseBuff
+class_name SimpleBuff extends FlowerBaseBuff
 
 func take_effect() -> void:
     super()
