@@ -1,3 +1,4 @@
+@icon("../src/icon.svg")
 class_name FlowerBuffManager
 extends Node
 

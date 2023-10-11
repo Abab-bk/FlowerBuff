@@ -1,6 +1,6 @@
 # FlowerBuff
 
-> 
+![](Cover.png)
 
 ## 🤔这是什么？🤔
 
@@ -65,4 +65,4 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 
 ## 常见问题
 
-TOD
+TODO
