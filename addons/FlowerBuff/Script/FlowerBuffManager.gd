@@ -105,6 +105,8 @@ func computed_values() -> void:
 
 func compute() -> void:
     for _buff in buff_list:
+        # 防止清空buff后不计算
+        output_data = compute_data
         if not _buff:
             return
         update_buff_tree()
