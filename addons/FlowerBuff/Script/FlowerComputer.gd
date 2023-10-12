@@ -28,7 +28,7 @@ func compute_all() -> void:
                 computed_data[_target_property] = \
                 computed_data[_target_property] + (computed_data[_target_property] * __modifier.value)
                 # 本次最终计算值：computed_data[_origin_index]，应该存到输出资源
-                output_data[_target_property] += computed_data[_target_property] # 又算了一次，导致覆盖
+                output_data[_target_property] = computed_data[_target_property] # 又算了一次，导致覆盖
                 output_data_change.emit()
                 
             FlowerConst.COMPUTE_TYPE.INCREASE:
@@ -36,7 +36,7 @@ func compute_all() -> void:
                 
                 var _target_property:String = __modifier.target_property
                 computed_data[_target_property] = computed_data[_target_property] + __modifier.value
-                output_data[_target_property] += computed_data[_target_property]
+                output_data[_target_property] = computed_data[_target_property]
                 output_data_change.emit()
                 
             FlowerConst.COMPUTE_TYPE.COMPLEX_INCREASE:
