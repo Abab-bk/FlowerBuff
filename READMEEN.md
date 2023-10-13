@@ -1,7 +1,7 @@
 FlowerBuff
 ==========
 
-Official release! Current version: v0.0.1!
+Official release! Current version: v0.0.2!
 
 ![](Cover.png)
 
@@ -25,7 +25,7 @@ FlowerBuff is a powerful, simple and easy to use Buff system plugin for Godot.
 
 > Requires Godot 4.x version.
 
-Quick Start
+⏱️Quick Start⏱️
 -----------
 
 ### Create a buff class
@@ -56,10 +56,14 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 
 Call `FlowerBuffManager.compute()` to process buff logic.
 
-## Documentation
+## 📃Documentation📃
 
 You can view more docs [here](https://btother.gitbook.io/flowerbuff/).
 
-## FAQ
+## 🫥Change Log🫥
 
-TODO
+v 0.0.2：
+
+* Add a signal to be emitted when the computation is complete: FlowerBuffManager.compute_ok
+
+* Fixed: automatically call ```compute()``` after removing buff (after ```remove_buff()```)

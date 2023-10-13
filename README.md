@@ -2,7 +2,7 @@
 
 [English](READMEEN.md)
 
-正式发布！当前版本：v0.0.1！
+正式发布！当前版本：v0.0.2！
 
 ![](Cover.png)
 
@@ -25,7 +25,7 @@ FlowerBuff 是一个为 Godot 开发的强大、简单、易用的 Buff 系统�
 
 > 需要 Godot 4.x 版本。
 
-## 快速上手
+## ⏱️快速上手⏱️
 
 ### 创建 buff 类
 
@@ -53,10 +53,14 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 
 调用 `FlowerBuffManager.compute()` 来处理 buff 逻辑。
 
-## 文档
+## 📃文档📃
 
 你可以在 [这里](https://btother.gitbook.io/flowerbuff/) 查看更多文档。
 
-## 常见问题
+## 🫥更新日志🫥
 
-TODO
+v 0.0.2：
+
+- 增加计算完成信号：FlowerBuffManager.compute_ok
+
+- 修改：移除 buff 后自动调用 ```compute()``` （```remove_buff()``` 之后）
