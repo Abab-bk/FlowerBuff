@@ -60,10 +60,10 @@ func update_buff_tree() -> void:
         minus_time.connect(i.minus_all_time)
         i.removed.connect(remove_buff.bind(i))
         i.computed_values.connect(computed_values)
-        i.activated.connect(func():a_buff_activated.emit())
-        i.finished.connect(func():a_buff_finished.emit())
+        # i.activated.connect(func():a_buff_activated.emit())
+        i.finished.connect(func(_buff:FlowerBaseBuff):a_buff_finished.emit(_buff))
         i.computed_values.connect(func():compute_values.emit())
-        i.removed.connect(func():a_buff_removed.emit())
+        # i.removed.connect(func():a_buff_removed.emit())
 
 func add_buff(_buff:FlowerBaseBuff) -> void:
     buff_list.append(_buff)
@@ -79,6 +79,7 @@ func remove_buff(_buff:FlowerBaseBuff) -> void:
     
     if _buff in buff_list:
         buff_list.erase(_buff)
+        a_buff_removed.emit(_buff)
         _buff = null
     
     compute()

@@ -1,10 +1,8 @@
 class_name FlowerBaseBuff
 extends Resource
 
-# TODO: buff循环次数
-
 signal activated
-signal finished
+signal finished(_buff:FlowerBaseBuff)
 signal removed
 signal computed_values
 
@@ -66,15 +64,18 @@ func minus_active_time() -> void:
         un_take_effect()
         if not repeat:
 #            print("不是重复buff，应该退出")
+            finished.emit(self)
             remove()
             return
 #        print("是重复buff，应该继续：", repeat)
         
         if repeated_count >= repeat_count:
 #            print("循环次数耗尽")
+            finished.emit(self)
             remove()
             return
         
+        finished.emit(self)
         repeated_count += 1
         current_state = STATE.COOLDOWN
     
