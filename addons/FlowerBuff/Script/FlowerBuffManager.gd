@@ -109,11 +109,11 @@ func computed_values() -> void:
     computer.compute()
 
 func compute() -> void:
+    # 防止清空buff后不计算
     output_data = compute_data
     compute_ok.emit()
     
     for _buff in buff_list:
-        # 防止清空buff后不计算
         if not _buff:
             return
         update_buff_tree()
