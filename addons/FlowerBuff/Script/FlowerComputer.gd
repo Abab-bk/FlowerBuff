@@ -7,6 +7,8 @@ var origin_data:FlowerData
 var output_data:FlowerData
 var all_data:Dictionary
 
+var buff_manager:FlowerBuffManager
+
 func compute() -> void:
     compute_all()
 
@@ -73,6 +75,8 @@ func compute_all() -> void:
                 output_data[_origin_index] += output_data[_origin_index] * computed_data[_origin_index]
                 
                 output_data_change.emit()
+        
+        buff_manager.compute_ok.emit()
 #        print("计算完毕")
 
 func analyse_formula(_formula:String) -> String:

@@ -7,6 +7,7 @@ signal a_buff_activated(buff:FlowerBaseBuff)
 signal a_buff_finished(buff:FlowerBaseBuff)
 signal a_buff_removed(buff:FlowerBaseBuff)
 signal compute_values
+signal compute_ok
 
 @export var target:Node
 @export var compute_data:FlowerData
@@ -26,6 +27,7 @@ func _ready() -> void:
     
     computer = FlowerComputer.new()
     add_child(computer)
+    computer.buff_manager = self
     computer.output_data_change.connect(func():
         output_data = computer.output_data
 #        print("更新 output_data 完毕")
@@ -78,6 +80,8 @@ func remove_buff(_buff:FlowerBaseBuff) -> void:
     if _buff in buff_list:
         buff_list.erase(_buff)
         _buff = null
+    
+    compute()
 
 func computed_values() -> void:
     var id_counter := 1  # 用于生成新的不相同ID的计数器
