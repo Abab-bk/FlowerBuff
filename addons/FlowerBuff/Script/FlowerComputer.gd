@@ -15,7 +15,9 @@ func compute() -> void:
 func compute_all() -> void:
     output_data = origin_data.duplicate(true)
     
-    for _modifier in all_data:        
+    print("BuffManager 计算开始：", Time.get_ticks_msec())
+    for _modifier in all_data:
+        print("单个 Buff 值计算开始：", Time.get_ticks_msec()) 
         var __modifier:FlowerComputeData = all_data[_modifier]
         # 如果没有这个属性
         if not origin_data.get(__modifier.target_property):
@@ -35,6 +37,7 @@ func compute_all() -> void:
                 output_data_change.emit()
                 
             FlowerConst.COMPUTE_TYPE.INCREASE:
+                
                 var computed_data = origin_data.duplicate(true)
                 
                 var _target_property:String = __modifier.target_property
@@ -77,8 +80,11 @@ func compute_all() -> void:
                 
                 output_data_change.emit()
         
-        buff_manager.compute_ok.emit()
+        print("单个 Buff 值计算结束：", Time.get_ticks_msec()) 
+        
+    buff_manager.compute_ok.emit()
 #        print("计算完毕")
+    print("BuffManager 计算开始：", Time.get_ticks_msec())
 
 func analyse_formula(_formula:String) -> String:
     # 首先通过正则解析方括号内内容：

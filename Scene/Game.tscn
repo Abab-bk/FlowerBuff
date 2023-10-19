@@ -16,7 +16,7 @@ damage = 100
 
 [sub_resource type="Resource" id="Resource_pham1"]
 script = ExtResource("5_hk1fa")
-id = "增加攻击伤害"
+id = &"攻击1"
 type = 3
 value = 100.0
 formual = "100 - [hp]/[max_hp]"
@@ -24,7 +24,7 @@ target_property = "damage"
 
 [sub_resource type="Resource" id="Resource_ck3e7"]
 script = ExtResource("5_hk1fa")
-id = "增加攻击伤害"
+id = &"攻击2"
 type = 2
 value = 100.0
 formual = "10 * 1"
@@ -53,3 +53,10 @@ script = ExtResource("1_l4hfr")
 target = NodePath("../Player")
 compute_data = SubResource("Resource_lixap")
 buff_list = Array[ExtResource("5_e67g8")]([SubResource("Resource_ckf86")])
+
+[node name="Button" type="Button" parent="."]
+offset_right = 501.0
+offset_bottom = 138.0
+text = "aa"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

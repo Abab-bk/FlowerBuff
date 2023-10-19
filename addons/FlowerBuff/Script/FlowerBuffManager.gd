@@ -90,17 +90,8 @@ func computed_values() -> void:
 
     for _buff in buff_list:
         for _value in _buff.compute_values:
-            if computer.all_data.has(_value.id):
-                # 处理存在相同ID的情况
-                var new_id := _value.id + "_" + str(id_counter)  # 生成新的不相同ID
-                
-                while new_id in processed_ids:  # 确保新ID不会重复
-                    id_counter += 1
-                    new_id = _value.id + "_" + str(id_counter)
-                
-                _value.id = new_id  # 更新值的ID
-                processed_ids.append(new_id)  # 将新ID添加到已处理列表中
-
+#            if computer.all_data.has(_value.id):
+#                continue
             computer.all_data[_value.id] = _value
     
     # 然后加入进去origin_data
