@@ -70,8 +70,7 @@ func add_buff(_buff:FlowerBaseBuff) -> void:
     compute()
 
 func add_buff_list(_buff_list:Array[FlowerBaseBuff]) -> void:
-    for i in _buff_list:
-        buff_list.append(i)
+    buff_list.append_array(_buff_list)
     compute()
 
 func remove_buff_list(_buff_list:Array[FlowerBaseBuff]) -> void:
