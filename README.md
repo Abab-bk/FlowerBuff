@@ -2,7 +2,7 @@
 
 [English](READMEEN.md)
 
-正式发布！当前版本：v0.0.2！
+正式发布！当前版本：v0.0.3！
 
 ![](Cover.png)
 
@@ -58,6 +58,10 @@ FlowerBuffManager.add_buff(_buff:FlowerBaseBuff)
 你可以在 [这里](https://btother.gitbook.io/flowerbuff/) 查看更多文档。
 
 ## 🫥更新日志🫥
+
+v 0.0.3:
+
+* 添加 ```add_buff_list()``` 和 ```remove_buff_list()```
 
 v 0.0.2：
 

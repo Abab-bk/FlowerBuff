@@ -1,7 +1,7 @@
 FlowerBuff
 ==========
 
-Official release! Current version: v0.0.2!
+Official release! Current version: v0.0.3!
 
 ![](Cover.png)
 
@@ -61,6 +61,10 @@ Call `FlowerBuffManager.compute()` to process buff logic.
 You can view more docs [here](https://btother.gitbook.io/flowerbuff/).
 
 ## 🫥Change Log🫥
+
+v 0.0.3:
+
+- add ```add_buff_list()``` and ```remove_buff_list()```
 
 v 0.0.2：
 
