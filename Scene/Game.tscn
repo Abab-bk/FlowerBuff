@@ -34,13 +34,13 @@ target_property = "hp"
 script = ExtResource("5_e67g8")
 name = "浴血"
 desc = "自身血量越低，攻击伤害越高。"
-repeat = true
-repeat_count = 2
-infinite = false
+repeat = false
+repeat_count = 0
+infinite = true
 compute_values = Array[ExtResource("5_hk1fa")]([SubResource("Resource_pham1"), SubResource("Resource_ck3e7")])
-prepare_time = 1
-active_time = 1
-cooldown_time = 1
+prepare_time = 0
+active_time = 0
+cooldown_time = 0
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_76fn0")

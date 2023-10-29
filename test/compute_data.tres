@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://df7dmrjym0oum"]
+
+[ext_resource type="Script" path="res://Script/CharacterDatas.gd" id="1_vu7fv"]
+
+[resource]
+script = ExtResource("1_vu7fv")
+hp = 1
+max_hp = 200
+mp = 10
+damage = 100

@@ -69,6 +69,26 @@ func add_buff(_buff:FlowerBaseBuff) -> void:
     buff_list.append(_buff)
     compute()
 
+func add_buff_list(_buff_list:Array[FlowerBaseBuff]) -> void:
+    for i in _buff_list:
+        buff_list.append(i)
+    compute()
+
+func remove_buff_list(_buff_list:Array[FlowerBaseBuff]) -> void:
+    for _buff in _buff_list:
+        if _buff.is_connected("removed", remove_buff):
+            _buff.disconnect("removed", remove_buff)
+        if _buff.is_connected("computed_values", computed_values):
+            _buff.disconnect("computed_values", computed_values)
+        if is_connected("minus_time", _buff.minus_all_time):
+            disconnect("minus_time", _buff.minus_all_time)
+        
+        if _buff in buff_list:
+            buff_list.erase(_buff)
+            a_buff_removed.emit(_buff)
+            _buff = null
+    compute()
+
 func remove_buff(_buff:FlowerBaseBuff) -> void:
     if _buff.is_connected("removed", remove_buff):
         _buff.disconnect("removed", remove_buff)

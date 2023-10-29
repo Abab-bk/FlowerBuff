@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FlowerComputeData" load_steps=2 format=3 uid="uid://b388drgdk5fe0"]
+
+[ext_resource type="Script" path="res://addons/FlowerBuff/Script/FlowerComputeData.gd" id="1_4wggv"]
+
+[resource]
+script = ExtResource("1_4wggv")
+id = &"攻击2"
+type = 2
+value = 100.0
+formual = "10 * 1"
+target_property = "hp"

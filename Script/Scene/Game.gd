@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var buff_manager:FlowerBuffManager = $PlayerBuffs
 
+func _ready() -> void:
+    buff_manager.compute_ok.connect(func():
+        print("计算结束：", Time.get_ticks_msec()))
+
 func _on_button_pressed() -> void:
     var time1 = Time.get_ticks_msec()
     print("开始计算：", time1)

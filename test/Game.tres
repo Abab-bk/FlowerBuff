@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FlowerComputeData" load_steps=2 format=3 uid="uid://bvy3h37d4kdtp"]
+
+[ext_resource type="Script" path="res://addons/FlowerBuff/Script/FlowerComputeData.gd" id="1_cfw3s"]
+
+[resource]
+script = ExtResource("1_cfw3s")
+id = &"攻击1"
+type = 3
+value = 100.0
+formual = "100 - [hp]/[max_hp]"
+target_property = "damage"
