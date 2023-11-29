@@ -43,6 +43,7 @@ enum STATE {
     COOLDOWN,
 }
 
+# FIXME: 重复的buff不激活后不会减去数值
 # FIXME: 由于会自动激活，导致每个 buff 的每个计算值都会重复计算
 
 func start() -> void:

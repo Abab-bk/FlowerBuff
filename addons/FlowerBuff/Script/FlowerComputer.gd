@@ -6,7 +6,7 @@ signal output_data_change
 
 var origin_data:FlowerData
 var output_data:FlowerData
-var all_data:Dictionary
+var all_data:Array
 
 var buff_manager:FlowerBuffManager
 
@@ -16,11 +16,17 @@ func compute() -> void:
 func compute_all() -> void:
     output_data = origin_data.duplicate(true)
     
-    for _modifier in all_data:
-        var __modifier:FlowerComputeData = all_data[_modifier]
+    var _count:int = 0
+    for __modifier in all_data:
+#        var __modifier:FlowerComputeData = all_data[_modifier]
         # 如果没有这个属性
         if not origin_data.get(__modifier.target_property):
             continue
+        
+        _count += 1
+        print("匹配__modifier第 %s 次" % str(_count))
+        
+        # FIXME: 由于origin_data不对，导致computed_data不对，再导致计算错误
         
         match __modifier.type:
             # 根据modifier的type计算
@@ -33,7 +39,7 @@ func compute_all() -> void:
                 computed_data[_target_property] + (computed_data[_target_property] * __modifier.value)
                 # 本次最终计算值：computed_data[_origin_index]，应该存到输出资源
                 output_data[_target_property] = computed_data[_target_property] # 又算了一次，导致覆盖
-                output_data_change.emit()
+#                output_data_change.emit()
                 
             FlowerConst.COMPUTE_TYPE.INCREASE:
                 
@@ -42,7 +48,7 @@ func compute_all() -> void:
                 var _target_property:String = __modifier.target_property
                 computed_data[_target_property] = computed_data[_target_property] + __modifier.value
                 output_data[_target_property] = computed_data[_target_property]
-                output_data_change.emit()
+#                output_data_change.emit()
                 
             FlowerConst.COMPUTE_TYPE.COMPLEX_INCREASE:
                 var computed_data = origin_data.duplicate(true)
@@ -60,7 +66,7 @@ func compute_all() -> void:
                 computed_data[_origin_index] = result
                 output_data[_origin_index] += computed_data[_origin_index]
                 
-                output_data_change.emit()
+#                output_data_change.emit()
             
             FlowerConst.COMPUTE_TYPE.COMPLEX_MORE:
                 var computed_data = origin_data.duplicate(true)
@@ -77,7 +83,10 @@ func compute_all() -> void:
                 computed_data[_origin_index] = result
                 output_data[_origin_index] += output_data[_origin_index] * computed_data[_origin_index]
                 
-                output_data_change.emit()
+#                output_data_change.emit()
+    
+    output_data_change.emit()
+    
     buff_manager.compute_ok.emit()
 
 func analyse_formula(_formula:String) -> String:
