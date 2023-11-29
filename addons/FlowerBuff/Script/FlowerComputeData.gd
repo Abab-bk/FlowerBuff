@@ -1,7 +1,7 @@
 class_name FlowerComputeData
 extends Resource
 
-@export var id:StringName
+@export var id:String
 @export var type:FlowerConst.COMPUTE_TYPE = FlowerConst.COMPUTE_TYPE.MORE
 @export var value:float = 100.0
 @export var formual:String
