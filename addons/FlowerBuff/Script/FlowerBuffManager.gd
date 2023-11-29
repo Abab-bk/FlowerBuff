@@ -104,15 +104,14 @@ func remove_buff(_buff:FlowerBaseBuff) -> void:
     compute()
 
 func computed_values() -> void:
-    print("计算值")
+    computer.all_data = []
+    
     for _buff in buff_list:
         for _value in _buff.compute_values:
 #            if computer.all_data.has(_value.id):
 #                continue
 #            computer.all_data[_value.id] = _value
             computer.all_data.append(_value)
-    
-    print(computer.all_data)
     
     # 然后加入进去origin_data
     computer.origin_data = compute_data

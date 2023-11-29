@@ -16,7 +16,10 @@ func compute() -> void:
 func compute_all() -> void:
     output_data = origin_data.duplicate(true)
     
+    var computed_data = origin_data.duplicate(true)
+    
     var _count:int = 0
+    
     for __modifier in all_data:
 #        var __modifier:FlowerComputeData = all_data[_modifier]
         # 如果没有这个属性
@@ -31,7 +34,7 @@ func compute_all() -> void:
         match __modifier.type:
             # 根据modifier的type计算
             FlowerConst.COMPUTE_TYPE.MORE:
-                var computed_data = origin_data.duplicate(true)
+                
 #                var computed_data = origin_data.duplicate(true)
                 
                 var _target_property:String = __modifier.target_property
@@ -43,7 +46,7 @@ func compute_all() -> void:
                 
             FlowerConst.COMPUTE_TYPE.INCREASE:
                 
-                var computed_data = origin_data.duplicate(true)
+#                var computed_data = origin_data.duplicate(true)
                 
                 var _target_property:String = __modifier.target_property
                 computed_data[_target_property] = computed_data[_target_property] + __modifier.value
@@ -51,7 +54,7 @@ func compute_all() -> void:
 #                output_data_change.emit()
                 
             FlowerConst.COMPUTE_TYPE.COMPLEX_INCREASE:
-                var computed_data = origin_data.duplicate(true)
+#                var computed_data = origin_data.duplicate(true)
                 
                 var _origin_index:String = __modifier.target_property
 
@@ -69,7 +72,7 @@ func compute_all() -> void:
 #                output_data_change.emit()
             
             FlowerConst.COMPUTE_TYPE.COMPLEX_MORE:
-                var computed_data = origin_data.duplicate(true)
+#                var computed_data = origin_data.duplicate(true)
                 
                 var _origin_index:String = __modifier.target_property
                 
