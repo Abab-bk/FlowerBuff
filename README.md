@@ -1,5 +1,8 @@
 # FlowerBuff
 
+# DEAD, SEE THE NEW VER: https://github.com/Abab-bk/FlowerStats
+# 死了，看新版本：https://github.com/Abab-bk/FlowerStats
+
 [English](READMEEN.md)
 
 正式发布！当前版本：v0.0.3！
